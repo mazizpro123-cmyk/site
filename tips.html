@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileCare | Daily Care</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tips.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-logo">
+    <span class="logo-icon">✦</span>
+    <span>SmileCare</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="brushing.html">Brushing</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="tips.html" class="active">Daily Care</a>
+    <a href="game.html">Mini Game</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="game.html" class="btn-nav">Play Game</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero tips-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-label">📅 Daily Routine</span>
+    <h1>Daily <em>Dental</em><br>Care Guide</h1>
+    <p>Build lasting habits with this evidence-based daily routine that keeps your teeth and gums healthy for life.</p>
+  </div>
+  <div class="hero-calendar-deco">📅</div>
+</section>
+
+<!-- HABIT TRACKER -->
+<section class="tracker-section">
+  <div class="tracker-inner">
+    <div class="section-label">Habit Tracker</div>
+    <h2 class="section-title">Check off today's<br><em>dental habits</em></h2>
+    <p style="color:var(--gray); margin-bottom:2rem; font-size:0.95rem;">Click each habit as you complete it. Reset tomorrow!</p>
+
+    <div class="habit-list" id="habitList">
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Morning Brush (2 min)</strong>
+          <span>After breakfast, fluoride toothpaste</span>
+        </div>
+        <div class="habit-badge morning">Morning</div>
+      </div>
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Floss Once Today</strong>
+          <span>Between every tooth, gentle C-shape</span>
+        </div>
+        <div class="habit-badge">Anytime</div>
+      </div>
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Drink 8 Glasses of Water</strong>
+          <span>Water neutralizes acid, washes bacteria</span>
+        </div>
+        <div class="habit-badge water">Day</div>
+      </div>
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Limit Sugary Snacks</strong>
+          <span>Chose fruits, veggies, or nuts instead</span>
+        </div>
+        <div class="habit-badge">Day</div>
+      </div>
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Night Brush (2 min)</strong>
+          <span>Most important brush of the day</span>
+        </div>
+        <div class="habit-badge night">Night</div>
+      </div>
+      <div class="habit-item" onclick="toggleHabit(this)">
+        <div class="habit-check"></div>
+        <div class="habit-info">
+          <strong>Tongue Cleaning</strong>
+          <span>Reduces bacteria and freshens breath</span>
+        </div>
+        <div class="habit-badge night">Night</div>
+      </div>
+    </div>
+
+    <div class="habit-progress">
+      <div class="hp-label">Daily progress: <span id="countLabel">0/6</span></div>
+      <div class="hp-track">
+        <div class="hp-bar" id="hpBar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORNING / NIGHT ROUTINE -->
+<section class="routines">
+  <div class="routines-inner">
+    <div class="routine-col morning-col">
+      <div class="routine-header">
+        <span class="routine-time-badge">☀️ Morning</span>
+        <h3>Morning Routine</h3>
+        <p>Start your day with a clean mouth and fresh breath</p>
+      </div>
+      <ol class="routine-steps">
+        <li>
+          <span class="rs-num">1</span>
+          <div>
+            <strong>Rinse with water</strong>
+            <p>Loosen overnight bacteria</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num">2</span>
+          <div>
+            <strong>Brush for 2 minutes</strong>
+            <p>All 4 zones, 30 sec each</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num">3</span>
+          <div>
+            <strong>Clean your tongue</strong>
+            <p>Back to front, 3-5 strokes</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num">4</span>
+          <div>
+            <strong>Spit, don't rinse</strong>
+            <p>Let fluoride work longer</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="routine-col night-col">
+      <div class="routine-header">
+        <span class="routine-time-badge dark">🌙 Night</span>
+        <h3>Night Routine</h3>
+        <p>The most important routine — don't skip it</p>
+      </div>
+      <ol class="routine-steps">
+        <li>
+          <span class="rs-num dark">1</span>
+          <div>
+            <strong>Floss all teeth</strong>
+            <p>Before brushing to loosen debris</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num dark">2</span>
+          <div>
+            <strong>Brush for 2 minutes</strong>
+            <p>Gentle pressure, all surfaces</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num dark">3</span>
+          <div>
+            <strong>Clean your tongue</strong>
+            <p>Remove bacteria from surface</p>
+          </div>
+        </li>
+        <li>
+          <span class="rs-num dark">4</span>
+          <div>
+            <strong>Mouthwash (optional)</strong>
+            <p>Fluoride rinse for extra protection</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS MASONRY -->
+<section class="tips-grid-section">
+  <div class="tg-inner">
+    <div class="section-label">Expert Tips</div>
+    <h2 class="section-title">Upgrade your oral<br><em>health today</em></h2>
+
+    <div class="tips-mosaic">
+      <div class="tip-big teal-card">
+        <div class="tc-icon">💧</div>
+        <h3>Drink More Water</h3>
+        <p>Water washes away food particles and bacteria. It also keeps saliva production up — your mouth's natural defense against decay. Aim for 2 liters daily.</p>
+      </div>
+      <div class="tip-sm">
+        <div class="tc-icon sm">🥕</div>
+        <h3>Eat Crunchy Veggies</h3>
+        <p>Carrots, celery, and apples naturally scrub teeth and stimulate saliva flow.</p>
+      </div>
+      <div class="tip-sm dark-card">
+        <div class="tc-icon sm">🧀</div>
+        <h3>Cheese & Dairy</h3>
+        <p>High in calcium and casein — both strengthen tooth enamel naturally.</p>
+      </div>
+      <div class="tip-sm">
+        <div class="tc-icon sm">☕</div>
+        <h3>Limit Coffee & Tea</h3>
+        <p>These stain teeth. If you drink them, rinse with water immediately after.</p>
+      </div>
+      <div class="tip-sm dark-card">
+        <div class="tc-icon sm">🌿</div>
+        <h3>Green Tea Helps</h3>
+        <p>Contains catechins that kill bacteria responsible for gum disease and bad breath.</p>
+      </div>
+      <div class="tip-big">
+        <div class="tc-icon">🦷</div>
+        <h3>See Your Dentist Every 6 Months</h3>
+        <p>Professional cleanings remove tartar that no brush can touch. Early cavity detection saves thousands in treatment costs later. Put it in your calendar now.</p>
+        <div class="tip-callout">Regular checkups prevent 80% of dental emergencies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT PAGE CTA -->
+<section class="page-cta">
+  <p>Put your knowledge to the test!</p>
+  <a href="game.html" class="btn-primary">Play Mini Game →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-icon">✦</span> SmileCare</div>
+    <p>© 2026 SmileCare | Educational Portfolio Project</p>
+    <nav class="footer-nav">
+      <a href="brushing.html">Brushing</a>
+      <a href="mistakes.html">Mistakes</a>
+      <a href="tips.html">Daily Care</a>
+      <a href="game.html">Mini Game</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  function toggleHabit(el) {
+    el.classList.toggle('done');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const all = document.querySelectorAll('.habit-item');
+    const done = document.querySelectorAll('.habit-item.done');
+    const pct = (done.length / all.length) * 100;
+    document.getElementById('hpBar').style.width = pct + '%';
+    document.getElementById('countLabel').textContent = `${done.length}/${all.length}`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileCare | Mini Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-logo">
+    <span class="logo-icon">✦</span>
+    <span>SmileCare</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="brushing.html">Brushing</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="tips.html">Daily Care</a>
+    <a href="game.html" class="active">Mini Game</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="game.html" class="btn-nav">Play Game</a>
+  </div>
+</header>
+
+<!-- GAME SECTION -->
+<section class="game-section">
+  <div class="game-container">
+
+    <!-- START SCREEN -->
+    <div id="startScreen" class="game-screen active">
+      <div class="start-emoji">🦷</div>
+      <h1 class="game-title">Dental<br><em>Knowledge Quiz</em></h1>
+      <p class="game-subtitle">Test what you've learned about oral hygiene. 10 questions. How many can you get right?</p>
+      <div class="game-features">
+        <div class="gf-item"><span>🎯</span> 10 Questions</div>
+        <div class="gf-item"><span>⚡</span> 20 sec each</div>
+        <div class="gf-item"><span>🏆</span> Score & grade</div>
+      </div>
+      <button class="game-btn" onclick="startGame()">Start Quiz →</button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quizScreen" class="game-screen">
+
+      <div class="quiz-header">
+        <div class="quiz-meta">
+          <span id="questionCounter">Question 1 of 10</span>
+          <span class="quiz-score-live">Score: <strong id="liveScore">0</strong></span>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="quiz-timer-wrap">
+          <div class="quiz-timer-ring">
+            <svg viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="25" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="5"/>
+              <circle cx="30" cy="30" r="25" fill="none" stroke="var(--mint)" stroke-width="5"
+                stroke-dasharray="157" stroke-dashoffset="0"
+                stroke-linecap="round"
+                transform="rotate(-90 30 30)"
+                id="timerCircle"/>
+            </svg>
+            <span id="timerNum">20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-area">
+        <div class="q-category" id="qCategory">Brushing Technique</div>
+        <h2 class="q-text" id="questionText">Loading question...</h2>
+      </div>
+
+      <div class="answer-grid" id="answerGrid">
+        <!-- answers injected by JS -->
+      </div>
+
+      <div id="feedback" class="feedback hidden">
+        <div class="fb-icon" id="fbIcon"></div>
+        <div class="fb-text" id="fbText"></div>
+        <button class="game-btn sm" onclick="nextQuestion()">Next →</button>
+      </div>
+
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="resultScreen" class="game-screen">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <div class="result-grade" id="resultGrade">A+</div>
+      <h2 class="result-title" id="resultTitle">Excellent!</h2>
+      <p class="result-subtitle" id="resultSubtitle">You really know your oral hygiene!</p>
+
+      <div class="result-score-big">
+        <span id="finalScore">0</span>
+        <span class="rs-slash">/</span>
+        <span>10</span>
+      </div>
+
+      <div class="result-breakdown" id="resultBreakdown">
+        <!-- filled by JS -->
+      </div>
+
+      <div class="result-actions">
+        <button class="game-btn" onclick="restartGame()">Play Again</button>
+        <a href="index.html" class="game-btn outline">Back to Home</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DECORATIVE BG -->
+  <div class="game-bg-deco">
+    <span>🦷</span><span>✦</span><span>🪥</span><span>✦</span><span>💧</span>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-icon">✦</span> SmileCare</div>
+    <p>© 2026 SmileCare | Educational Portfolio Project</p>
+    <nav class="footer-nav">
+      <a href="brushing.html">Brushing</a>
+      <a href="mistakes.html">Mistakes</a>
+      <a href="tips.html">Daily Care</a>
+      <a href="game.html">Mini Game</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileCare | Proper Brushing</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="brushing.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-logo">
+    <span class="logo-icon">✦</span>
+    <span>SmileCare</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="brushing.html" class="active">Brushing</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="tips.html">Daily Care</a>
+    <a href="game.html">Mini Game</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="game.html" class="btn-nav">Play Game</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-label">✦ Technique Guide</span>
+    <h1>The Art of<br><em>Proper Brushing</em></h1>
+    <p>Master the scientifically-proven method to clean every surface of your teeth effectively and gently.</p>
+  </div>
+  <div class="hero-tooth-deco">🦷</div>
+</section>
+
+<!-- TIMER SECTION -->
+<section class="timer-section">
+  <div class="timer-inner">
+    <div class="timer-label">Brushing Timer</div>
+    <div class="timer-display" id="timerDisplay">2:00</div>
+    <div class="timer-progress">
+      <div class="timer-bar" id="timerBar"></div>
+    </div>
+    <p class="timer-hint">Brush for the full 2 minutes — one section at a time</p>
+    <div class="timer-btns">
+      <button class="timer-btn start" id="startBtn" onclick="startTimer()">▶ Start</button>
+      <button class="timer-btn reset" onclick="resetTimer()">↺ Reset</button>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNIQUE STEPS -->
+<section class="technique">
+  <div class="technique-inner">
+    <div class="section-label">The Method</div>
+    <h2 class="section-title">Step-by-step<br><em>brushing guide</em></h2>
+
+    <div class="technique-grid">
+
+      <div class="tech-card" data-num="01">
+        <div class="tech-icon">📐</div>
+        <div class="tech-num">01</div>
+        <h3>45° Angle</h3>
+        <p>Hold the toothbrush at a 45-degree angle toward the gumline. This position lets bristles clean both the tooth surface and the edge of the gums simultaneously.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Point bristles toward where the tooth meets the gum.
+        </div>
+      </div>
+
+      <div class="tech-card" data-num="02">
+        <div class="tech-icon">⭕</div>
+        <div class="tech-num">02</div>
+        <h3>Gentle Circular Motion</h3>
+        <p>Use small, gentle circular strokes — never scrub back and forth. Circular motion lifts plaque without damaging enamel or causing gum recession.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Think "massage" not "scrub". Light pressure works better.
+        </div>
+      </div>
+
+      <div class="tech-card highlight" data-num="03">
+        <div class="tech-icon">🗺️</div>
+        <div class="tech-num">03</div>
+        <h3>Cover All Surfaces</h3>
+        <p>Brush outer, inner, and chewing surfaces of every tooth. Most people miss the inner surfaces of lower front teeth — take your time.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Divide mouth into 4 zones — 30 seconds each.
+        </div>
+      </div>
+
+      <div class="tech-card" data-num="04">
+        <div class="tech-icon">👅</div>
+        <div class="tech-num">04</div>
+        <h3>Clean Your Tongue</h3>
+        <p>Gently brush or scrape your tongue after teeth. The tongue harbors bacteria that cause bad breath and can recontaminate your freshly cleaned teeth.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Use a dedicated tongue scraper for best results.
+        </div>
+      </div>
+
+      <div class="tech-card" data-num="05">
+        <div class="tech-icon">🦷</div>
+        <div class="tech-num">05</div>
+        <h3>Right Toothpaste</h3>
+        <p>Use a fluoride toothpaste (1000–1500 ppm for adults). A pea-sized amount is enough. Fluoride strengthens enamel and prevents cavities effectively.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Don't rinse with water after — let fluoride work.
+        </div>
+      </div>
+
+      <div class="tech-card" data-num="06">
+        <div class="tech-icon">⏰</div>
+        <div class="tech-num">06</div>
+        <h3>Right Timing</h3>
+        <p>Brush twice daily — once in the morning and once before bed. The night brush is most critical as saliva flow decreases during sleep.</p>
+        <div class="tech-tip">
+          <span class="tip-label">Pro tip</span>
+          Wait 30 min after eating acidic foods before brushing.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ZONES VISUAL -->
+<section class="zones">
+  <div class="zones-inner">
+    <div class="section-label">Coverage Map</div>
+    <h2 class="section-title">The 4-zone<br><em>brushing system</em></h2>
+
+    <div class="zones-grid">
+      <div class="zone-card" style="--z-color: #1a6b6b;">
+        <div class="zone-num">Zone 1</div>
+        <div class="zone-name">Upper Right</div>
+        <div class="zone-time">30 sec</div>
+        <p>Outer, inner & chewing surfaces of upper right teeth</p>
+      </div>
+      <div class="zone-card" style="--z-color: #2a9b9b;">
+        <div class="zone-num">Zone 2</div>
+        <div class="zone-name">Upper Left</div>
+        <div class="zone-time">30 sec</div>
+        <p>Outer, inner & chewing surfaces of upper left teeth</p>
+      </div>
+      <div class="zone-card" style="--z-color: #3dbcbc;">
+        <div class="zone-num">Zone 3</div>
+        <div class="zone-name">Lower Right</div>
+        <div class="zone-time">30 sec</div>
+        <p>Outer, inner & chewing surfaces of lower right teeth</p>
+      </div>
+      <div class="zone-card" style="--z-color: #d4ede9; color: #0e1a1f;">
+        <div class="zone-num" style="color:#1a6b6b;">Zone 4</div>
+        <div class="zone-name">Lower Left</div>
+        <div class="zone-time" style="color:#1a6b6b;">30 sec</div>
+        <p>Outer, inner & chewing surfaces of lower left teeth</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT PAGE CTA -->
+<section class="page-cta">
+  <p>Now that you know the right way — learn what to avoid</p>
+  <a href="mistakes.html" class="btn-primary">See Common Mistakes →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-icon">✦</span> SmileCare</div>
+    <p>© 2026 SmileCare | Educational Portfolio Project</p>
+    <nav class="footer-nav">
+      <a href="brushing.html">Brushing</a>
+      <a href="mistakes.html">Mistakes</a>
+      <a href="tips.html">Daily Care</a>
+      <a href="game.html">Mini Game</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  let timerInterval = null;
+  let totalSeconds = 120;
+  let remaining = 120;
+  let running = false;
+
+  function updateDisplay() {
+    const m = Math.floor(remaining / 60);
+    const s = remaining % 60;
+    document.getElementById('timerDisplay').textContent =
+      `${m}:${s.toString().padStart(2,'0')}`;
+    const pct = ((totalSeconds - remaining) / totalSeconds) * 100;
+    document.getElementById('timerBar').style.width = pct + '%';
+  }
+
+  function startTimer() {
+    if (running) return;
+    running = true;
+    document.getElementById('startBtn').disabled = true;
+    timerInterval = setInterval(() => {
+      remaining--;
+      updateDisplay();
+      if (remaining <= 0) {
+        clearInterval(timerInterval);
+        running = false;
+        document.getElementById('timerDisplay').textContent = 'Done! 🎉';
+        document.getElementById('startBtn').disabled = false;
+      }
+    }, 1000);
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    running = false;
+    remaining = totalSeconds;
+    updateDisplay();
+    document.getElementById('startBtn').disabled = false;
+  }
+</script>
+</body>
+</html>
